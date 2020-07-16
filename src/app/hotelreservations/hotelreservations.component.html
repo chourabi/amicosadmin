@@ -1,0 +1,45 @@
+
+  <!-- As a heading -->
+  <nav class="navbar navbar-light  nav-bar-app">
+    <span class="navbar-brand mb-0 h1">Hotels reservations</span>
+  </nav>
+
+  <div class="container">
+      <h3>Clients reservations</h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">USER NAME</th>
+            <th scope="col">OFFRE ID-NAME</th>
+            <th scope="col">ACTIONS</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of reservations; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{reservation.id}}</td>
+            <td>{{reservation.user.name}}</td>
+            <td>{{reservation.id}}-{{reservation.offre.name}}</td>
+            
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example" *ngIf="reservation.stat ==0">
+                    <button type="button" class="btn btn-success" (click)="changeStat(reservation.id,1)">ACCEPT</button>
+                    <button type="button" class="btn btn-danger" (click)="changeStat(reservation.id,2)">REFUSE</button>
+                  </div>
+                  <div class="alert alert-success" *ngIf="reservation.stat == 1">
+                    ACCEPTED
+                  </div>
+                  <div class="alert alert-danger" *ngIf="reservation.stat == 2">
+                    REFUSED
+                  </div>
+                  
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+  </div>

@@ -1,0 +1,26 @@
+
+  <!-- As a heading -->
+  <nav class="navbar navbar-light  nav-bar-app">
+    <span class="navbar-brand mb-0 h1">HOTELS</span>
+  </nav>
+
+  <div class="row">
+      <div class="col-sm-12">
+            <a class="btn btn-primary add-new-hotel btn-sm"  routerLink="/dashboard/addhotel">ADD NEW HOTEL</a>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4" *ngFor=" let hotel of hotels ">
+        <div class="card" style="width: 100%; margin: 10px">
+            <img class="card-img-top" src="{{hotel.imageURL}}" alt="Card image cap" style="width: auto; height : 150px">
+            <div class="card-body">
+              <h5 class="card-title">{{hotel.name}}</h5>
+              <p class="card-text">
+                description
+              </p>
+              <a href="#" class="btn btn-danger">DELETE</a>
+            </div>
+          </div>
+    </div>
+  </div>

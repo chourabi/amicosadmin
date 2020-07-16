@@ -1,0 +1,60 @@
+
+  <!-- As a heading -->
+  <nav class="navbar navbar-light  nav-bar-app">
+    <span class="navbar-brand mb-0 h1">ADD NEW HOTEL</span>
+  </nav>
+
+  <div class="container">
+      <div class="row my-5">
+        <form style="width: 100%;" [formGroup]="addHotelForm"   (ngSubmit) = "addHotel()">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Name</label>
+                <input type="text" class="form-control" id="inputEmail4"  formControlName="name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Address</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Where ?" formControlName="address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Main image url</label>
+              <input type="url" class="form-control" id="inputAddress" placeholder="" formControlName="imgurl">
+              <img [src]="addHotelForm.value.imgurl" width="250px" class="my-5" >
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Number of start</label>
+              <input type="number" class="form-control" id="inputAddress2" formControlName="nbrStars" >
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="hasWifi">
+                    <label class="form-check-label" for="gridCheck">
+                      Has wifi
+                    </label>
+                  </div>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="hasPool">
+                    <label class="form-check-label" for="gridCheck">
+                      Has pool
+                    </label>
+                  </div>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="hasParking">
+                    <label class="form-check-label" for="gridCheck">
+                      Has parking
+                    </label>
+                  </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-right: 15px;">ADD </button>
+            <a routerLink="/dashboard/hotels" class="btn btn-secondary">CANCEL </a>
+            
+          </form>
+      </div>
+  </div>

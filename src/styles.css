@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.nav-bar-app {
+  background-color: #00182b !important;
+}
+
+.nav-bar-app > span {
+    color: white !important;
+}
